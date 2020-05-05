@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Postbox</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('.like').on('click', function(L){
+			L = L || event;
+			var from = L.currentTarget;
+			var ex = from.getElementsByClassName("exec")[0];
+			ex = (parseInt(ex.innerHTML));
+			if (ex == 0){
+				var likes = from.getElementsByClassName("likenum")[0].innerHTML;
+				likes = (parseInt(likes)+1);
+				from.getElementsByClassName("likenum")[0].innerHTML = likes;
+				ex = ((ex)+1);
+				from.getElementsByClassName("exec")[0].innerHTML = ex;
+			}else if (ex != 0){ alert("This has already been liked!");}
+		});
+
+		$("#menu").click(function(){
+			$("#ham, #overlay").fadeIn(300);
+		});
+
+		$("#closemenu").click(function(){
+			$("#ham, #overlay").fadeOut(300);
+		});
+	});
+	</script>
+</head>
+<body>
+	<div id="overlay"></div>
+	<div id="ham"> <!-- Side Menu Objects -->
+		<button id="closemenu"><img src="img/close.png" alt="Close Menu" width="50" height=""></button>
+		<ul id="list">
+			<li><a href="profile.html">My Profile</a></li>
+			<li><a href="faq.html">Help</a></li>
+			<li><a href="login.html">Log Out</a></li>
+		</ul>
+		</div>
+		<div id="mainbg">
+
+			<div id="header">
+				<button id="menu"><img src="img/user1.png" alt="User Icon" width="125" height="125"></button>
+				<div id="search">
+					<img src="img/searchbar.png" alt="Search Bar" width="500" height="62.5">
+				</div>
+			</div>
+
+			<div id="footer">
+				<div id="submit">
+					<a href="submit.html"><img src="img/submit.png" alt="New Post" width="80" height="80"></a>
+					<div class="name">New Post</div>
+				</div>
+				<div id="options">
+					<a href="options.html"><img src="img/options.png" alt="Options" width="80" height="80"></a>
+					<div class="name">Options</div>
+				</div>
+			</div>
+
+			<div id="main">
+				<div class="post"> <!--Post 1-->
+					<div class="user">
+						<img src="img/user2.png" alt="User Icon" width="100" height="100">
+						<div class="name">Steven Matthews</div>
+					</div>
+					<div class="posttext">
+						Just had a great day out with the family! Did some shopping, then we went for a afternoon walk. 🚶 👍
+					</div>
+					<div class="like">
+						<div class="likenum">24</div>
+						<button class="likebutton"><img src="img/like.png" alt="Like" width="70" height="70"></button>
+						<div class="exec">0</div>
+					</div>
+				</div>
+
+				<div class="post"> <!--Post 2-->
+					<div class="user">
+						<img src="img/user3.png" alt="User Icon" width="100" height="100">
+						<div class="name">Cassandra McGuinness</div>
+					</div>
+					<div class="posttext">
+						Looking forward to tonight! 😂🤫
+					</div>
+					<div class="like">
+						<div class="likenum">6</div>
+						<button class="likebutton"><img src="img/like.png" alt="Like" width="70" height="70"></button>
+						<div class="exec">0</div>
+					</div>
+				</div>
+
+				<div class="post"> <!--Post 3-->
+					<div class="user">
+						<img src="img/user4.png" alt="User Icon" width="100" height="100">
+						<div class="name">Eileen Jones</div>
+					</div>
+					<div class="posttext">
+						🤔 Quote of the day: "I am no bird; and no net ensnares me; I am a free human being with an independent will." - Charlotte Bronte
+					</div>
+					<div class="like">
+						<div class="likenum">7</div>
+						<button class="likebutton"><img src="img/like.png" alt="Like" width="70" height="70"></button>
+						<div class="exec">0</div>
+					</div>
+				</div>
+
+				<div class="post"> <!--Post 4-->
+					<div class="user">
+						<img src="img/user1.png" alt="User Icon" width="100" height="100">
+						<div class="name">Johnathan Joestar</div>
+					</div>
+					<div class="posttext">
+						Unlike 'display:block', 'display:inline-block' does not force a line break afterwards. #cssfacts
+					</div>
+					<div class="like">
+						<div class="likenum">64</div>
+						<button class="likebutton"><img src="img/like.png" alt="Like" width="70" height="70"></button>
+						<div class="exec">0</div>
+					</div>
+				</div>
+
+				<div class="post"> <!--Post 5-->
+					<div class="user">
+						<img src="img/user3.png" alt="User Icon" width="100" height="100">
+						<div class="name">Jessica Stirling</div>
+					</div>
+					<div class="posttext">
+						Take a break from time to time〜
+					</div>
+					<div class="like">
+						<div class="likenum">103</div>
+						<button class="likebutton"><img src="img/like.png" alt="Like" width="70" height="70"></button>
+						<div class="exec">0</div>
+					</div>
+				</div>
+
+				<div class="post"> <!--Post 6-->
+					<div class="user">
+						<img src="img/user2.png" alt="User Icon" width="100" height="100">
+						<div class="name">Bob Bobson</div>
+					</div>
+					<div class="posttext">
+						Just tried that new burger place in the town center. OMG So good!!
+					</div>
+					<div class="like">
+						<div class="likenum">4</div>
+						<button class="likebutton"><img src="img/like.png" alt="Like" width="70" height="70"></button>
+						<div class="exec">0</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>

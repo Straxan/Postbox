@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My Profile</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="js/galleria.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="prfbg">
+		<div id="header">
+			<div id="logo">
+				<img src="img/logo.png" alt="Postbox Logo" width="125" height="125"/>
+			</div>
+			<div id="home">
+				<a href="main.html"><img src="img/home.png" alt="Help" width="75" height="75"/></a>
+			</div>
+			<div id="options">
+				<a href="options.html"><img src="img/options.png" alt="Options" width="75" height="75"/></a>
+			</div>
+		</div>
+
+		<div class="maincontent">
+		  <div id="userimg">
+		    <img src="img/user1.png" alt="User Icon" width="300" height="300"/>
+		  </div>
+		  <div id="title">Johnathan Joestar</div>
+		  <button id="showne" onclick="shownameentry()">Change Name</button>
+
+			<div id="nameentry">
+				<div>Enter new name:</div>
+				<input type="text" id="myName" value="Johnathan Joestar">
+				<button onclick="namescript()">Change</button>
+			</div>
+
+			<div class="subtitle">About Me:<button id="showbe" onclick="showbioentry()">Edit Bio</button></div>
+			<div class="message">This is my bio.</div>
+
+			<div id="bioentry">
+				<div>Enter new Bio:</div>
+				<textarea rows="12" id="myBio" placeholder="This is my bio."></textarea>
+				<button onclick="bioscript()">Change</button>
+			</div>
+
+			<div id="gallery">
+				<div class="subtitle">My Pictures:</div>
+				<div class="galleria">
+					<img src="img/photo1.jpg">
+					<img src="img/photo2.jpg">
+					<img src="img/photo3.jpg">
+				</div>
+			</div>
+
+			<div id="userpostcontainer">
+				<div class="post"> <!--User's Post-->
+					<div class="user">
+						<img src="img/user1.png" alt="User Icon" width="100" height="100">
+						<div class="name">Johnathan Joestar</div>
+					</div>
+					<div class="posttext">
+						Unlike 'display:block', 'display:inline-block' does not force a line break afterwards. #cssfacts
+					</div>
+					<div class="like">
+						<div class="likenum">64</div>
+						<button class="likebutton"><img src="img/like.png" alt="Like" width="70" height="70"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+	(function() {
+		Galleria.loadTheme('js/themes/twelve/galleria.twelve.min.js');
+		Galleria.run('.galleria');
+	}());
+
+	function namescript() {
+		var x = document.getElementById("myName").value;
+		document.getElementById("title").innerHTML = x;
+		document.getElementsByClassName("name")[0].innerHTML = x;
+		document.getElementById("nameentry").style.display = "none";
+		}
+	function shownameentry() {
+		document.getElementById("nameentry").style.display = "table";
+		}
+
+	function bioscript() {
+		var y = document.getElementById("myBio").value;
+		document.getElementsByClassName("message")[0].innerHTML = y;
+		document.getElementById("bioentry").style.display = "none";
+		}
+	function showbioentry() {
+		document.getElementById("bioentry").style.display = "table";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,534 @@
+*{margin: 0;padding: 0;}
+body{
+background: url(https://unsplash.it/1920/1080/) no-repeat fixed 0 0 / cover;
+height: 100vh;
+}
+#mainbg, #prfbg, #postbg{
+background-image: linear-gradient(to top right, #559EFF, #82FFBA);
+height: 100vh;
+overflow-y: scroll;
+}
+#header{
+width: 100%;
+background: rgba(0, 0, 0, 0.4);
+-webkit-backdrop-filter: blur(5px);
+backdrop-filter: blur(5px);
+display: inline-block;
+height: 125px;
+margin-bottom: 20pt;
+z-index:1;
+}
+.galleria{
+width: 65%;
+height: 650px;
+background: rgba(0, 0, 0, 0.5);
+position: relative;
+margin: auto;
+border: 5px solid black;
+}
+button{
+background: transparent;
+border: none !important;
+}
+#header > button{
+position: relative;
+}
+#overlay{
+width: 100vw;
+height: 100vh;
+background: rgba(0, 0, 0, 0.1);
+-webkit-backdrop-filter: blur(7.5px);
+backdrop-filter: blur(7.5px);
+display: none;
+position: fixed;
+z-index: 99;
+}
+#ham{
+height: 100vh;
+background-image: linear-gradient(to top right, #559EFF, #82FFBA);
+width: 17.5em;
+left: auto;
+position: fixed;
+display: none;
+z-index: 99;
+}
+ul{
+font-family: Rockwell;
+font-size: 20pt;
+color: white;
+display: block;
+list-style-type: none;
+margin: 1em 0 1em 0;
+padding-left: 40px;
+}
+li{
+margin-bottom: 1em;
+}
+#closemenu{
+margin: 1em;
+cursor: pointer;
+}
+#footer {
+display: flex;
+justify-content: center;
+position: fixed;
+bottom: 0;
+width: 100%;
+height: 110px;
+background: rgba(0, 0, 0, 0.5);
+z-index: 99;
+}
+#logo{
+position: relative;
+width: 20%;
+display:inline-block;
+max-width: 100%;
+}
+#menu{
+cursor: pointer;
+}
+#logo img{
+position: relative;
+width: 125px;
+height: 125px;
+}
+#help, #options, #search, #home{
+float:right;
+margin: 0;
+position: relative;
+top: 50%;
+-ms-transform: translateY(-50%);
+transform: translateY(-50%);
+margin-right: 2.5%;
+}
+#search{
+width: 75%;
+margin-right: 1%;
+}
+#search img{
+position: relative;
+float: right;
+max-width: 100%;
+height: auto;
+}
+#footer > #options, #submit{
+display: inline-block;
+margin: 0;
+position: relative;
+top: 50%;
+-ms-transform: translateY(-50%);
+transform: translateY(-50%);
+margin-left: 3%;
+}
+.example{
+max-width: 35%;
+height: auto;
+}
+.example img{
+float:left;
+max-width: 100%;
+margin: 0.75em 0 0 1em;
+}
+.maincontent{
+float:right;
+margin: 5em;
+width: 45%;
+background: rgba(0, 0, 0, 0.3);
+-webkit-backdrop-filter: blur(5px);
+backdrop-filter: blur(5px);
+color: white;
+z-index: 1;
+}
+#faqbg > .maincontent, #prfbg > .maincontent, #postbg > .maincontent, #optbg > .maincontent{
+width: 95%;
+margin: 0 2.5%;
+padding-bottom: 2.5em;
+}
+#prfbg > .maincontent > #userimg img{
+display: block;
+margin: auto;
+position: relative;
+}
+#userimg{
+border: 5px solid black;
+border-radius: 10px;
+background-color: white;
+width: 300px;
+height: 300px;
+display: block;
+margin: 1em auto 0.5em auto;
+position: relative;
+}
+#nameentry, #bioentry{
+display: none;
+text-align: center;
+position: relative;
+margin: 0 auto;
+background: rgba(0, 0, 0, 0.4);
+border-radius: 5pt;
+border-color: rgba(0, 0, 0, 0.4);
+font-family: Rockwell;
+font-size: 16pt;
+width: 30%;
+height: 75px;
+}
+#bioentry{
+width: 80%;
+max-width: 700px;
+height: 125px;
+}
+#postentry{
+text-align: center;
+display: block;
+margin: 1em auto 3em auto;
+font-family: Rockwell;
+font-size: 16pt;
+width: 80%;
+max-width: 800px;
+height: 150px;
+}
+#myBio{
+position: relative;
+width: 100%;
+font-family: arial;
+font-size: 10pt;
+margin: 1em auto auto auto;
+}
+#myPost{
+position: relative;
+width: 80%;
+font-family: arial;
+font-size: 10pt;
+margin: 1em auto auto auto;
+clear: both;
+}
+#showne{
+display: flex;
+justify-content: center;
+width: 100%;
+margin-bottom: 0.5em;
+}
+#showbe{
+margin-left: 0.5em;
+}
+#showne, #showbe, #nameentry > button, #bioentry > button, #postentry > div > button, .subtitle > button{
+color: white;
+font-size: 12pt;
+cursor: pointer;
+}
+#nameentry > button{
+margin: 1em auto auto 0.5em;
+}
+#bioentry > button, #postentry > button{
+margin: 1em auto 0.5em auto;
+}
+#sendpost{
+position: relative;
+display: flex;
+align-content: center;
+width: 100%;
+height: auto;
+margin: 0.5em auto;
+}
+#sendpost > button, #delete{
+position: relative;
+background-color: white;
+border-radius: 5px;
+padding: 16px 32px;
+margin: auto;
+font-size: 18pt;
+color: black;
+transition-duration: 0.4s;
+}
+#delete{
+font-size: 16pt;
+padding: 12px 24px;
+}
+#sendpost > button:hover{
+background-color: #666666;
+color: white;
+}
+#delete:hover{
+background-color: #FF4135;
+color: white;
+}
+.exec{
+display: none;
+}
+.main{
+width: 100%;
+display: inline-block;
+overflow: hidden;
+}
+.post{
+display:flex;
+justify-content: space-between;
+width:90%;
+margin: 4em 5% 0 5%;
+position: relative;
+top: 50%;
+-ms-transform: translateY(-50%);
+transform: translateY(-50%);
+background: rgba(255, 255, 255, 1);
+border: 5px solid black;
+border-radius: 10px;
+height: 140px;
+}
+#postbg > .maincontent > #userpostcontainer > .post{
+margin: 0 5%;
+-ms-transform: translateY(2%);
+transform: translateY(0%);
+}
+#userpostcontainer{
+position: relative;
+width: 100%;
+margin: 10em 0;
+}
+.posttext{
+font-family: Rockwell;
+color: black;
+font-size: 16pt;
+width: 80%;
+}
+.user{
+float:left;
+border-right: 5px solid black;
+width:10%;
+margin-right: 5pt;
+}
+.user img{
+display: block;
+margin: auto;
+position: relative;
+max-width: 95%;
+height: auto;
+}
+.name{
+text-align: center;
+font-family: Rockwell;
+color: black;
+font-size: 12.5pt;
+margin: 0 1pt;
+}
+#submit > .name, #options > .name{
+text-align: center;
+font-family: Rockwell;
+font-size: 14pt;
+margin: 0 1pt;
+color: white;
+}
+.like{
+display: table-cell;
+border-left: 5px solid black;
+position: relative;
+top: 50%;
+-ms-transform: translateY(-50%);
+transform: translateY(-50%);
+vertical-align: middle;
+padding: 0 2pt 2em 0;
+width: 10%;
+}
+.likenum{
+font-family: "Arial Black";
+font-size: 20pt;
+color: black;
+position: relative;
+text-align: center;
+}
+.likebutton{
+display: block;
+margin: auto;
+position: relative;
+top: 50%;
+-ms-transform: translateY(-50%);
+transform: translateY(-50%);
+max-width: 95%;
+height: auto;
+cursor: pointer;
+}
+#title{
+font-size: 22pt;
+font-family: Rockwell;
+text-align: center;
+margin: 1em 0;
+}
+#prfbg > .maincontent > #title, #postbg > .maincontent > #title{
+margin: 0 0 0.25em 0;
+}
+.subtitle{
+font-size: 18pt;
+font-family: Rockwell;
+text-align: center;
+margin: auto 0 0.5em 0;
+}
+#faqbg > .maincontent > .subtitle{
+margin: 2em 0 0.5em 0;
+}
+#prfbg > .maincontent > .subtitle{
+text-align: left;
+margin: auto auto 0.5em 0.5em;
+}
+#prfbg > .maincontent > .gallery > .subtitle, #postbg > .subtitle{
+margin: 0 0 1em 0;
+}
+#prfbg > .maincontent > .message{
+text-align: left;
+margin: auto auto 1.5em 0.5em;
+}
+#faqbg > .maincontent > .message{
+text-align: center;
+}
+#optbg > .maincontent > .message{
+margin-bottom: 1em;
+}
+.message{
+font-size: 14pt;
+font-family: Arial;
+margin: 1em;
+}
+.button{
+font-size: 14pt;
+padding-top: 10px;
+padding-bottom: 10px;
+font-family: Rockwell;
+text-align: center;
+margin-top: 2em;
+width: 100%;
+background: rgba(0, 0, 0, 0.3);
+}
+a:link,  a:visited{
+color: white;
+}
+/*PC Large*/
+@media all and (max-width: 1100px) and (orientation:landscape){
+.user, .like{
+width: 17.5%;
+}
+.posttext{
+font-size: 16pt;
+width: 65%;
+}
+.galleria{
+height: 400px;
+}}
+/*PC Small*/
+@media all and (max-width: 880px) and (orientation:landscape){
+.example{
+display: none;
+}
+.maincontent{
+float:left;
+width:98%;
+margin: 0 1%;
+}
+.message{
+margin-bottom: 1em;
+}
+.button{
+font-size: 14pt;
+}}
+/*Phone Large*/
+@media all and (orientation:portrait) and (min-width: 801px){
+.maincontent{
+float:left;
+width:98%;
+margin: 0 1%;
+}
+.example{
+display: none;
+}
+.user, .like{
+width: 17.5%;
+}
+.posttext{
+width: 65%;
+}}
+/*Phone Medium*/
+@media all and (max-width: 800px) and (min-width: 541px) and (orientation:portrait){
+.example{
+display: none;
+}
+.maincontent{
+float:right;
+width:98%;
+margin: 0 1%;
+}
+.user, .like{
+width: 25%;
+}
+.posttext{
+font-size: 16pt;
+width: 50%;
+}
+.like{
+padding-bottom: 1em;
+}
+.galleria{
+height: 400px;
+}}
+/*Phone Small*/
+@media all and (max-width: 540px) and (orientation:portrait){
+.example{
+display: none;
+}
+.maincontent{
+float:right;
+width:98%;
+margin: 0 1%;
+}
+#userimg{
+width: 150px;
+height: 150px;
+}
+#userimg img{
+width: 150px;
+height: 150px;
+}
+#header{
+height: 100px;
+}
+#header > button img{
+width: 100px;
+height: 100px;
+}
+#menu{
+position: relative;
+width: 75px;
+height: 75px;
+}
+#menu img{
+position: relative;
+width: 75px;
+height: 75px;
+}
+#logo img{
+position: relative;
+width: 100px;
+height: 100px;
+}
+#search img{
+position: relative;
+width: 80%;
+}
+.post{
+border: 2.5px solid black;
+}
+.user{
+width: 25%;
+border-right: 2.5px solid black;
+}
+.user > .name{
+font-size: 10pt;
+}
+.posttext{
+font-size: 12pt;
+width: 50%;
+}
+.like{
+width: 25%;
+border-left: 2.5px solid black;
+}
+.galleria{
+width: 70%;
+height: 200px;
+}}

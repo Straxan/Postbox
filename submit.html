@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Submit New Post</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="postbg">
+		<div id="header">
+			<div id="logo">
+				<img src="img/logo.png" alt="Postbox Logo" width="125" height="125"/>
+			</div>
+			<div id="home">
+				<a href="main.html"><img src="img/home.png" alt="Help" width="75" height="75"/></a>
+			</div>
+			<div id="options">
+				<a href="options.html"><img src="img/options.png" alt="Options" width="75" height="75"/></a>
+			</div>
+		</div>
+
+		<div class="maincontent">
+			<div id="title">New Post</div>
+			<div id="postentry">
+				<div class="subtitle">Post text:</div>
+				<textarea rows="12" id="myPost" placeholder="Your post here"></textarea>
+				<div><button onclick="preview()">Preview Post</button></div>
+			</div>
+
+			<div id="userpostcontainer">
+			<div class="subtitle">Post Preview</div>
+				<div class="post">
+					<div class="user">
+						<img src="img/user1.png" alt="User Icon" width="100" height="100">
+						<div class="name">Johnathan Joestar</div>
+					</div>
+					<div class="posttext">
+
+					</div>
+					<div class="like">
+						<div class="likenum">5</div>
+						<button class="likebutton"><img src="img/like.png" alt="Like" width="70" height="70"></button>
+					</div>
+				</div>
+				<div id="sendpost"><button onclick="sendpost()">Post</button></div>
+			</div>
+		</div>
+	</div>
+	<script>
+	function preview() {
+		var p = document.getElementById("myPost").value;
+		document.getElementsByClassName("posttext")[0].innerHTML = p;
+		}
+		function sendpost() {
+			alert("Post has been sent. ///Not Currently Implemented///")
+		}
+	</script>
+</body>
+</html>
